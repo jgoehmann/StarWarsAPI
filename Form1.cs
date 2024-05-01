@@ -90,6 +90,7 @@ namespace WindowsFormsApp1
             PHeighttxt.Text = p.height;
             PMasstxt.Text = p.mass;
             PSkintxt.Text = p.skin_color;
+            PHairtxt.Text = p.hair_color;
             PEyetxt.Text = p.eye_color;
             PBirthtxt.Text = p.birth_year;
             PGendertxt.Text= p.gender;

@@ -26,8 +26,23 @@ namespace WindowsFormsApp1
         private void GetPlanetbtn_Click(object sender, EventArgs e)
         {
             try {
-                Int32.Parse(GetPlanettxb.Text);
-                GetPlanet(GetPlanettxb.Text);
+                int test=Int32.Parse(GetPlanettxb.Text);
+                if (test > 0)
+                {
+                    if (test - 61 <= 0)
+                    {
+                        GetPlanet(GetPlanettxb.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("A Planet does not exist for the specified ID");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("A Planet does not exist for the specified ID");
+                }
+                
             }
             catch
             {
@@ -44,8 +59,22 @@ namespace WindowsFormsApp1
         {
             try
             {
-                Int32.Parse(GetPersontxb.Text);
-                GetPerson(GetPersontxb.Text);
+                int test= Int32.Parse(GetPersontxb.Text);
+                if (test > 0) 
+                {
+                    if (test - 89 <= 0)
+                    {
+                        GetPerson(GetPersontxb.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("A Character does not exist for the specified ID");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("A Character does not exist for the specified ID");
+                }
             }
             catch
             {

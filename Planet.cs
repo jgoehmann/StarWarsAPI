@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// class to store value associted with a planet, given by an API
+    /// </summary>
     public class Planet
     {
         public string name { get; set; }

@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllSpecies.cs" />
+    <Compile Include="ScenarioSpace.cs" />
+    <Compile Include="ScenarioGround.cs" />
+    <Compile Include="Scenario.cs" />
     <Compile Include="Starships.cs" />
     <Compile Include="Species.cs" />
     <Compile Include="JSONHelper.cs" />

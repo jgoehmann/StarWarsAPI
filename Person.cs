@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// Class to store value's associted with a person, given by an API
+    /// </summary>
     public class Person
     {
         public string name { get; set; }

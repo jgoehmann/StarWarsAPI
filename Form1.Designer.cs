@@ -72,6 +72,14 @@
             this.Starshipslbl = new System.Windows.Forms.Label();
             this.Starshipstxt = new System.Windows.Forms.Label();
             this.Specieslbx = new System.Windows.Forms.ListBox();
+            this.Generatorlbl = new System.Windows.Forms.Label();
+            this.CharacterChoicelbl = new System.Windows.Forms.Label();
+            this.PlanetChoicelbl = new System.Windows.Forms.Label();
+            this.CharacterChoicetxb = new System.Windows.Forms.TextBox();
+            this.PlanetChoicetxb = new System.Windows.Forms.TextBox();
+            this.ScenarioChoicebx = new System.Windows.Forms.ComboBox();
+            this.ScenarioGeneratebtn = new System.Windows.Forms.Button();
+            this.GeneratedScenariolbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // GetPlanetbtn
@@ -450,11 +458,90 @@
             this.Specieslbx.Size = new System.Drawing.Size(1781, 504);
             this.Specieslbx.TabIndex = 45;
             // 
+            // Generatorlbl
+            // 
+            this.Generatorlbl.AutoSize = true;
+            this.Generatorlbl.Location = new System.Drawing.Point(821, 23);
+            this.Generatorlbl.Name = "Generatorlbl";
+            this.Generatorlbl.Size = new System.Drawing.Size(971, 20);
+            this.Generatorlbl.TabIndex = 46;
+            this.Generatorlbl.Text = "Generate a scenario: (Choose if it happens on a planet or in space and enter ID\'s" +
+    ", if ID\'s are not entered they will be randomly generated)";
+            // 
+            // CharacterChoicelbl
+            // 
+            this.CharacterChoicelbl.AutoSize = true;
+            this.CharacterChoicelbl.Location = new System.Drawing.Point(821, 130);
+            this.CharacterChoicelbl.Name = "CharacterChoicelbl";
+            this.CharacterChoicelbl.Size = new System.Drawing.Size(83, 20);
+            this.CharacterChoicelbl.TabIndex = 47;
+            this.CharacterChoicelbl.Text = "Character:";
+            // 
+            // PlanetChoicelbl
+            // 
+            this.PlanetChoicelbl.AutoSize = true;
+            this.PlanetChoicelbl.Location = new System.Drawing.Point(821, 206);
+            this.PlanetChoicelbl.Name = "PlanetChoicelbl";
+            this.PlanetChoicelbl.Size = new System.Drawing.Size(58, 20);
+            this.PlanetChoicelbl.TabIndex = 48;
+            this.PlanetChoicelbl.Text = "Planet:";
+            // 
+            // CharacterChoicetxb
+            // 
+            this.CharacterChoicetxb.Location = new System.Drawing.Point(825, 150);
+            this.CharacterChoicetxb.Name = "CharacterChoicetxb";
+            this.CharacterChoicetxb.Size = new System.Drawing.Size(100, 26);
+            this.CharacterChoicetxb.TabIndex = 49;
+            // 
+            // PlanetChoicetxb
+            // 
+            this.PlanetChoicetxb.Location = new System.Drawing.Point(825, 230);
+            this.PlanetChoicetxb.Name = "PlanetChoicetxb";
+            this.PlanetChoicetxb.Size = new System.Drawing.Size(100, 26);
+            this.PlanetChoicetxb.TabIndex = 50;
+            // 
+            // ScenarioChoicebx
+            // 
+            this.ScenarioChoicebx.FormattingEnabled = true;
+            this.ScenarioChoicebx.Items.AddRange(new object[] {
+            "In space",
+            "On a planet "});
+            this.ScenarioChoicebx.Location = new System.Drawing.Point(825, 61);
+            this.ScenarioChoicebx.Name = "ScenarioChoicebx";
+            this.ScenarioChoicebx.Size = new System.Drawing.Size(121, 28);
+            this.ScenarioChoicebx.TabIndex = 51;
+            // 
+            // ScenarioGeneratebtn
+            // 
+            this.ScenarioGeneratebtn.Location = new System.Drawing.Point(825, 296);
+            this.ScenarioGeneratebtn.Name = "ScenarioGeneratebtn";
+            this.ScenarioGeneratebtn.Size = new System.Drawing.Size(112, 62);
+            this.ScenarioGeneratebtn.TabIndex = 52;
+            this.ScenarioGeneratebtn.Text = "Generate Scenario";
+            this.ScenarioGeneratebtn.UseVisualStyleBackColor = true;
+            this.ScenarioGeneratebtn.Click += new System.EventHandler(this.ScenarioGeneratebtn_Click);
+            // 
+            // GeneratedScenariolbl
+            // 
+            this.GeneratedScenariolbl.AutoSize = true;
+            this.GeneratedScenariolbl.Location = new System.Drawing.Point(999, 298);
+            this.GeneratedScenariolbl.Name = "GeneratedScenariolbl";
+            this.GeneratedScenariolbl.Size = new System.Drawing.Size(0, 20);
+            this.GeneratedScenariolbl.TabIndex = 53;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1953, 1062);
+            this.Controls.Add(this.GeneratedScenariolbl);
+            this.Controls.Add(this.ScenarioGeneratebtn);
+            this.Controls.Add(this.ScenarioChoicebx);
+            this.Controls.Add(this.PlanetChoicetxb);
+            this.Controls.Add(this.CharacterChoicetxb);
+            this.Controls.Add(this.PlanetChoicelbl);
+            this.Controls.Add(this.CharacterChoicelbl);
+            this.Controls.Add(this.Generatorlbl);
             this.Controls.Add(this.Specieslbx);
             this.Controls.Add(this.Starshipstxt);
             this.Controls.Add(this.Starshipslbl);
@@ -552,6 +639,14 @@
         private System.Windows.Forms.Label Starshipslbl;
         private System.Windows.Forms.Label Starshipstxt;
         private System.Windows.Forms.ListBox Specieslbx;
+        private System.Windows.Forms.Label Generatorlbl;
+        private System.Windows.Forms.Label CharacterChoicelbl;
+        private System.Windows.Forms.Label PlanetChoicelbl;
+        private System.Windows.Forms.TextBox CharacterChoicetxb;
+        private System.Windows.Forms.TextBox PlanetChoicetxb;
+        private System.Windows.Forms.ComboBox ScenarioChoicebx;
+        private System.Windows.Forms.Button ScenarioGeneratebtn;
+        private System.Windows.Forms.Label GeneratedScenariolbl;
     }
 }
 

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// class used to store values associted with a starship, given by an API
+    /// </summary>
     public class Starships
     {
         public string name { get; set; }

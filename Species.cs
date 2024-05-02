@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// class to store values related to a species, given by an API
+    /// </summary>
     public class Species
     {
         public string name { get; set; }

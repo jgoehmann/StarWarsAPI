@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+/// <summary>
+/// All the below functions are the borrowed functions that were given in class in order to get values using APIs, with some slight tweeks to accept IDs that often times have been user generated
+/// </summary>
     internal class JSONHelper
     {
         static readonly HttpClient client = new HttpClient();
@@ -107,13 +110,27 @@ namespace WindowsFormsApp1
             // Call asynchronous network methods in a try/catch block to handle exceptions.
             try
             {
-                HttpResponseMessage response = await client.GetAsync(c);
-                response.EnsureSuccessStatusCode();
-                string responseBody = await response.Content.ReadAsStringAsync();
-                // Above three lines can be replaced with new helper method below
-                // string responseBody = await client.GetStringAsync(uri);
+                //implemented the cheeky method to tell between a full link ID or just the number ID
+                if (c.Length < 8)
+                {
+                    HttpResponseMessage response = await client.GetAsync("https://swapi.py4e.com/api/starships/"+c+"/");
+                    response.EnsureSuccessStatusCode();
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    // Above three lines can be replaced with new helper method below
+                    // string responseBody = await client.GetStringAsync(uri);
 
-                myDeserializedClass = JsonConvert.DeserializeObject<Starships>(responseBody);
+                    myDeserializedClass = JsonConvert.DeserializeObject<Starships>(responseBody);
+                }
+                else
+                {
+                    HttpResponseMessage response = await client.GetAsync(c);
+                    response.EnsureSuccessStatusCode();
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    // Above three lines can be replaced with new helper method below
+                    // string responseBody = await client.GetStringAsync(uri);
+
+                    myDeserializedClass = JsonConvert.DeserializeObject<Starships>(responseBody);
+                }
             }
             catch (HttpRequestException e)
             {
